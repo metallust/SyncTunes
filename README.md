@@ -4,13 +4,12 @@ A Python application that converts YouTube playlists to Spotify playlists.
 
 ## Description
 
-This application allows you to convert your favorite YouTube playlists into Spotify playlists. It utilizes the YouTube Data API v3 and Spotify Web API to fetch the YouTube playlist details and create a corresponding playlist on Spotify.
+This application allows you to convert your favorite YouTube playlists into Spotify playlists. It utilizes the pytube to access unlisted or public playlist and Spotify Web API to fetch the YouTube playlist details and create a corresponding playlist on Spotify.
 
 ## Features
 
 - Convert YouTube playlists to Spotify playlists
 - Mapping of YouTube videos to Spotify tracks based on title and artist information
-- Automatic creation of Spotify playlists with matching tracks
 
 ## Setup
 
