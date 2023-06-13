@@ -70,12 +70,14 @@ def get_name(playlist):
 def main():
     # create a playlist
     song_list = []
+    song_not_found = []
     count = 0
     for song, author in get_songs(youtube_playlist):
         count += 1
         print(count, end='. ')
         song_on_spotify = search_on_spotify(song + ' ' + author)
         if not song_on_spotify:
+            song_not_found.append((song, author))
             continue
         song_list.append(song_on_spotify)
         
@@ -85,6 +87,8 @@ def main():
     # added len(song_list) in green and failed to add len(song_list) - count in red
     print(f"\033[92mAdded {len(song_list)} songs to spotify playlist\033[00m \033[91mFailed to add {len(song_list) - count} songs to spotify playlist\033[00m")
     
+    for song, author in song_not_found:
+        print(f"\033[91m{song} by {author} not found on spotify\033[00m")
         
 
     
