@@ -84,14 +84,16 @@ def main():
         count += 1
         print(count, end='. ')
         song_on_spotify = search_on_spotify(song + ' ' + author)
-       # Save all the songs in a playlist to a file
-        with open("log.txt", 'a', encoding='utf-8') as f:
-            f.write(f"{song} by {author} --> {song_on_spotify['name']} by {', '.join(artist['name'] for artist in song_on_spotify.get('artists', []))}\n")
-
         if not song_on_spotify:
+            # Save all the songs in a playlist to a file
+            with open("log.txt", 'a', encoding='utf-8') as f:
+                f.write(f"{song} by {author} --> NOT FOUND\n")
             song_not_found.append((song, author))
             continue
         song_list.append(song_on_spotify['uri'])
+        # Save all the songs in a playlist to a file
+        with open("log.txt", 'a', encoding='utf-8') as f:
+            f.write(f"{song} by {author} --> {song_on_spotify['name']} by {', '.join(artist['name'] for artist in song_on_spotify.get('artists', []))}\n")
         
     adding_songs_to_spotify_playlist(get_name(youtube_playlist), song_list)
     # print in green color
