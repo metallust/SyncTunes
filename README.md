@@ -38,11 +38,12 @@ In order to use the application, you need to obtain API credentials for Spotify 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/).
 2. Create a new application (if you haven't already).
 3. Note down the **Client ID** and **Client Secret**.
+4. Add a redirect uri `http://127.0.0.1:8080/`
 
 ### 5. Configuration
 
 - Rename the `sample_config.py` file to `config.py`.
-- Replace `"YOUR_CLIENT_ID"`, `"YOUR_CLIENT_SECRET"`, and `"YOUR_REDIRECT_URI"` in `config.py` with the respective values obtained from the API credentials.
+- Replace `"YOUR_CLIENT_ID"` and `"YOUR_CLIENT_SECRET"` in `config.py` with the respective values obtained from the API credentials.
 
 ### 6. Run the Application
     $ python app.py
