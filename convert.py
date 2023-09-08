@@ -79,8 +79,6 @@ def get_name(playlist):
 def main():
     
     youtube_playlist = input("Enter your youtube playlist link: ").strip()
-    # https://youtube.com/playlist?list=PLFn4dkBSmLS3yXEJXQjvAGP0kV92KAJtq
-    # https://www.youtube.com/playlist?list=PLpoApvPxkh9cCwOI1gozEEBFSaSqBF_gu
 
     # link validation
     if not re.match(
